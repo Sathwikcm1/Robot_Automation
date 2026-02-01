@@ -16,7 +16,7 @@ TestingInputBox
     Press Keys    xpath=//input[@id='id_text_string']    ENTER
     Wait Until Element Is Visible    xpath=//div[@id='result']    10s
     Element Should Contain  xpath=//div[@id='result']    Something
-
+  #Clear Element Text    xpath=//div[@id='result']
     Sleep    2s
     Close Browser
 *** keywords ***

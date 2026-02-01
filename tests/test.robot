@@ -14,4 +14,5 @@ Input Text Verification
   Input Text    xpath=//input[@name='search_query']    The Loop
   Press Keys    xpath=//input[@name='search_query']    ENTER
   Textfield Value Should Be    xpath=//input[@name='search_query']    The Loop
+  Clear Element Text    xpath=//input[@name='search_query'] 
   Sleep  5s
