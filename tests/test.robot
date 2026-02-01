@@ -1,11 +1,17 @@
 *** Settings ***
-Library  SeleniumLibrary
+Library    SeleniumLibrary
+Test Teardown    Close Browser
+
+*** Variables ***
+${youtube_url}    https://www.youtube.com/
+${browser}    chrome
+
 *** Test Cases ***
-Navigate To Home Page
-    Open Browser    https://example.com    chrome
-    Go To    https://example.com/login
-    Sleep  5s
-    Input Text    id=username    user@example.com
-    Input Text    id=password    password123
-    Click Button    id=login
-    Go To    https://example.com/dashboard
+Input Text Verification
+  Open Browser    ${youtube_url}    ${browser}
+  Maximize Browser Window
+  Wait Until Element Is Visible    xpath=//input[@name='search_query']  10s
+  Input Text    xpath=//input[@name='search_query']    The Loop
+  Press Keys    xpath=//input[@name='search_query']    ENTER
+  Textfield Value Should Be    xpath=//input[@name='search_query']    The Loop
+  Sleep  5s
