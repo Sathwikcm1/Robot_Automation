@@ -19,6 +19,7 @@ TestingInputBox
   #Clear Element Text    xpath=//div[@id='result']
     Sleep    2s
     Close Browser
+
 *** keywords ***
 
 Cleanup My Test
